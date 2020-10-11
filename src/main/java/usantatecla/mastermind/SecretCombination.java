@@ -1,6 +1,7 @@
 package usantatecla.mastermind;
 
 import java.util.Random;
+import usantatecla.utils.Console;
 
 class SecretCombination extends Combination {
 
@@ -25,8 +26,7 @@ class SecretCombination extends Combination {
     for(Color color: colors){
       sb.append(color.getSymbol());
     }
-    usantatecla.mastermind.utils.Console.instance()
-        .writeln(Message.SECRET_COMBINATION.getMessageSecretCombination(sb.toString()));
+    Console.instance().writeln(Message.SECRET_COMBINATION.getMessageSecretCombination(sb.toString()));
   }
 
   public Result checkResultFromProposedCombination(ProposedCombination proposedCombination){
