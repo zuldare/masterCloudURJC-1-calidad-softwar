@@ -2,9 +2,7 @@ package usantatecla.mastermind;
 
 import usantatecla.utils.Console;
 
-public class Result {
-
-  public static final int MAX_PEGS = 4;
+class Result {
 
   private int blacks = 0;
   private int whites = 0;

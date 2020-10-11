@@ -1,6 +1,6 @@
 package usantatecla.mastermind;
 
-public enum Color {
+enum Color {
   RED("R"), BLUE("B"), YELLOW("Y"), GREEN("G"), ORANGE("O"), PURPLE("P");
 
   private String symbol;

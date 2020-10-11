@@ -2,7 +2,7 @@ package usantatecla.mastermind;
 
 import usantatecla.utils.Console;
 
-public class Board {
+class Board {
 
   private static final Integer MAX_PLAYS = 10;
   private int attemp;

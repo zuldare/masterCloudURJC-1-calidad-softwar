@@ -1,65 +1,7 @@
 @startuml
 
-title Mastermind
-object Mastermind
-object Turn
-object Player
-object Board
-object PlaySquare
-object CheckSquare
-object Coordinate
-object GoalSequence
-object Action
-object PutPlayPieceAction
-object PutCheckPieceAction
-object Piece
-object CheckPiece
-object PlayPiece
-object Pink
-object Red
-object Blue
-object Green
-object Yellow
-object Black
-object White
-
-
-
-Piece <|-- CheckPiece
-Piece <|-- PlayPiece
-
-PlayPiece *--> "22" Pink
-PlayPiece *--> "22" Red
-PlayPiece *--> "22" Blue
-PlayPiece *--> "22" Green
-PlayPiece *--> "22" Yellow
-PlayPiece *--> "22" Black
-PlayPiece *--> "22" White
-
-CheckPiece *--> "30" Black
-CheckPiece *--> "30" White
-
-Action <|-- PutPlayPieceAction
-Action <|-- PutCheckPieceAction
-
-Board <|-- "12x5" PlaySquare
-Board <|-- "12x5" CheckSquare
-PlaySquare *--> Coordinate
-CheckSquare *--> Coordinate
-
-Mastermind *--> Board
-Mastermind *--> Turn
-Mastermind *--> "2" Player
-Player o-- "1" GoalSequence
-
-GoalSequence ..> "5" PutPlayPieceAction
-
-Player ..> Action
-Turn --> "1" Player
-
-PlaySquare o--> Piece
-CheckSquare o--> "0..1" Piece
-
-Action ..> Piece
+class MastermindGameLauncher {
+  + static void main(String[] args)
+}
 
 @enduml

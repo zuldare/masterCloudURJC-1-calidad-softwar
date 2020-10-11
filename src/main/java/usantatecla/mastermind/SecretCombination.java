@@ -1,9 +1,8 @@
 package usantatecla.mastermind;
 
-import java.util.Arrays;
 import java.util.Random;
 
-public class SecretCombination extends Combination {
+class SecretCombination extends Combination {
 
   public SecretCombination(){
     super();

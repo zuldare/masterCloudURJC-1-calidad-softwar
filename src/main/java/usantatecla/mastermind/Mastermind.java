@@ -3,7 +3,7 @@ package usantatecla.mastermind;
 import usantatecla.utils.Console;
 import usantatecla.utils.YesNoDialog;
 
-public class Mastermind {
+class Mastermind {
 
   private Board board;
 

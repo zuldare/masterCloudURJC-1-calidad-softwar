@@ -3,7 +3,7 @@ package usantatecla.mastermind;
 import java.util.List;
 import usantatecla.utils.Console;
 
-public class ProposedCombination extends Combination {
+class ProposedCombination extends Combination {
 
   List<Color> getProposedCombination(){
     return this.colors;

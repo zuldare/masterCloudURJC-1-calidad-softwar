@@ -1,6 +1,6 @@
 package usantatecla.mastermind;
 
-public enum Message {
+enum Message {
   TITLE("----- MASTERMIND ------"),
   SECRET_COMBINATION(" ****** - #combination"),
   PROPOSE_COMBINATION("Propose a combination: "),

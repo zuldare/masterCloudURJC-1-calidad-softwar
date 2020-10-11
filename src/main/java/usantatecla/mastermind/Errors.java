@@ -1,6 +1,6 @@
 package usantatecla.mastermind;
 
-public enum Errors {
+enum Errors {
   WRONG_LENGHT("Wrong proposed combination length"),
   WRONG_COLORS("Wrong colors, they must be #colorsCombination");
 
