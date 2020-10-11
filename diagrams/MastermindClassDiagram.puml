@@ -4,4 +4,35 @@ class MastermindGameLauncher {
   + static void main(String[] args)
 }
 
+class Mastermind {
+- Board board
++ void play()
+- void playMastermind()
+- boolean resumeGame()
+}
+
+
+class Board {
+
+  - static final Integer MAX_PLAYS = 10;
+  - int attemp;
+
+  - final SecretCombination secretCombination;
+  - final ProposedCombination[] proposedCombinations;
+  - final Result[] results;
+
+  Board()
+
+  void play() 
+
+  - void storeCombinationGuess(ProposedCombination proposedCombination) 
+
+  - ProposedCombination makeACombinationGuess() 
+
+  - void writeAttempInfo()
+
+  boolean hasWinner()
+
+  boolean hasLooser()
+}
 @enduml

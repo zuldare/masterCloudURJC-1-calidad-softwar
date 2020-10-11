@@ -7,9 +7,9 @@ class Board {
   private static final Integer MAX_PLAYS = 10;
   private int attemp;
 
-  private final SecretCombination secretCombination;
-  private final ProposedCombination[] proposedCombinations;
-  private final Result[] results;
+  private SecretCombination secretCombination;
+  private ProposedCombination[] proposedCombinations;
+  private Result[] results;
 
   Board() {
     this.secretCombination = new SecretCombination();
