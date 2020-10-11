@@ -1,5 +1,7 @@
 package usantatecla.mastermind;
 
+import usantatecla.utils.Console;
+
 public class Board {
 
   private static final Integer MAX_PLAYS = 10;
@@ -17,27 +19,39 @@ public class Board {
   }
 
   void play() {
+    this.writeAttempInfo();
+    ProposedCombination proposedCombination = this.makeACombinationGuess();
+    this.storeCombinationGuess(proposedCombination);
+  }
 
-    this.secretCombination.writeCombination();
-    ProposedCombination proposedCombination;
-    usantatecla.mastermind.utils.Console.instance().writeln(Message.ATTEMPT.getMessageAttempt(attemp));
-
-    do {
-      String readedCombination = usantatecla.mastermind.utils.Console.instance().readString(Message.PROPOSE_COMBINATION.getMessage()).toUpperCase();
-      proposedCombination = new ProposedCombination(readedCombination);
-    } while (proposedCombination.isCombinationWrong());
-
+  private void storeCombinationGuess(ProposedCombination proposedCombination) {
     this.proposedCombinations[attemp] = proposedCombination;
     this.results[attemp] = this.secretCombination.checkResultFromProposedCombination(this.proposedCombinations[attemp]);
     attemp++;
   }
 
+  private ProposedCombination makeACombinationGuess() {
+    ProposedCombination proposedCombination;
+    do {
+      proposedCombination = new ProposedCombination();
+      proposedCombination.setColorsFromCombination();
+    } while (proposedCombination.isCombinationWrong());
+    return proposedCombination;
+  }
 
-  public boolean hasWinner() {
+  private void writeAttempInfo(){
+    this.secretCombination.writeCombination();
+    for(int i=0; i < attemp; i++){
+       this.results[i].write(this.proposedCombinations[i].getProposedCombinationAsString());
+    }
+    Console.instance().writeln(Message.ATTEMPT.getMessageAttempt(attemp));
+  }
+
+  boolean hasWinner() {
     return this.results[attemp-1].getBlacks() == SecretCombination.MAX_COLORS;
   }
 
-  public boolean hasLooser() {
+  boolean hasLooser() {
     return (attemp-1) == MAX_PLAYS;
   }
 }

@@ -1,4 +1,5 @@
-package usantatecla.mastermind.utils;
+package usantatecla.utils;
+
 
 public class YesNoDialog {
 

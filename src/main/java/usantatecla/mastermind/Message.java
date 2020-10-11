@@ -8,7 +8,7 @@ public enum Message {
   ATTEMPT(" #attempt attempt(s): "),
   WIN("You've won!!! ;-)"),
   LOOSE("You've lost!!! :-("),
-  RESUME("RESUME? (y/n): ");
+  RESUME("RESUME: ");
 
   private String message;
 

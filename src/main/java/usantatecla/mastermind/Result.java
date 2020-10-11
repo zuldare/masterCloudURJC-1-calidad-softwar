@@ -1,5 +1,7 @@
 package usantatecla.mastermind;
 
+import usantatecla.utils.Console;
+
 public class Result {
 
   public static final int MAX_PEGS = 4;
@@ -16,7 +18,8 @@ public class Result {
     return this.blacks;
   }
 
-  public int getWhites(){
-    return this.whites;
+
+  public void write(String combination) {
+    Console.instance().writeln(Message.RESULT_COMBINATION.getResultCombination(combination, this.blacks, this.whites));
   }
 }
