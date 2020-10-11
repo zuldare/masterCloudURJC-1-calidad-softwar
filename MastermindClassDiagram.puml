@@ -1,27 +1,28 @@
 @startuml
 
 title Mastermind
-class Mastermind
-class Turn
-class Player
-class Board
-class PlaySquare
-class CheckSquare
-class Coordinate
-class GoalSequence
-class Action
-class PutPlayPieceAction
-class PutCheckPieceAction
-class Piece
-class CheckPiece
-class PlayPiece
-class Pink
-class Red
-class Blue
-class Green
-class Yellow
-class Black
-class White
+object Mastermind
+object Turn
+object Player
+object Board
+object PlaySquare
+object CheckSquare
+object Coordinate
+object GoalSequence
+object Action
+object PutPlayPieceAction
+object PutCheckPieceAction
+object Piece
+object CheckPiece
+object PlayPiece
+object Pink
+object Red
+object Blue
+object Green
+object Yellow
+object Black
+object White
+
 
 
 Piece <|-- CheckPiece
@@ -54,9 +55,11 @@ Player o-- "1" GoalSequence
 GoalSequence ..> "5" PutPlayPieceAction
 
 Player ..> Action
-Turn --> "2" Player
+Turn --> "1" Player
 
 PlaySquare o--> Piece
 CheckSquare o--> "0..1" Piece
+
+Action ..> Piece
 
 @enduml
