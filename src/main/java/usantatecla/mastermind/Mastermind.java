@@ -16,12 +16,12 @@ public class Mastermind {
     do {
       this.board.play();
     } while (!this.board.hasWinner() && !this.board.hasLooser());
-
+    Message message = this.board.hasLooser() ? Message.LOOSE : Message.WIN;
+    usantatecla.mastermind.utils.Console.instance().writeln(message.getMessage());
   }
 
   private boolean resumeGame(){
-    // return this.board.resumeGame();
-    return false;
+    return new usantatecla.mastermind.utils.YesNoDialog().read(Message.RESUME.getMessage());
   }
 
 }

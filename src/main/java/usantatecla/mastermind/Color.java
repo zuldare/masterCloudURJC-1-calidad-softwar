@@ -23,4 +23,12 @@ public enum Color {
     }
     return null;
   }
+
+  public static String getAllSymbols(){
+    String values = "";
+    for(Color color: Color.values()){
+      values = values + color.getSymbol();
+    }
+    return values;
+  }
 }

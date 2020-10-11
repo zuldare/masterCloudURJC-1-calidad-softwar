@@ -1,44 +1,45 @@
 package usantatecla.mastermind;
 
+import java.util.List;
+
 public class ProposedCombination extends Combination {
 
-  public ProposedCombination(){
+  public ProposedCombination(String readedCombination){
     super();
-    this.setProposedCombination();
+    this.setColorsFromCombination(readedCombination);
   }
 
-  public String getProposedCombinationAsString(){
-    return this.colorsToString();
-  }
-
-  public Color[] getProposedCombination(){
+  public List<Color> getProposedCombination(){
     return this.colors;
   }
 
-  private void setProposedCombination(){
-    String combination = "";
-    do {
-      combination = usantatecla.mastermind.utils.Console.instance().readString(Message.PROPOSE_COMBINATION.getMessage()).toUpperCase();
-    } while (!this.isCombinationValid(combination));
+  private void setColorsFromCombination(String readedCombination){
+
+    for (int i=0; i< readedCombination.length(); i++){
+      this.colors.add(Color.getColorBySymbol(String.valueOf(readedCombination.charAt(i)).toUpperCase()));
+    }
   }
 
-  private boolean isCombinationValid(String combination){
-     return this.isCombinationLengthValid(combination) && this.isAllCombinationColorsValid(combination);
+  public boolean isCombinationWrong(){
+    return ! (this.isCombinationLengthValid() && this.isAllColorCombinationsValid());
   }
 
-  private boolean isCombinationLengthValid(String combination){
-    return combination.length() == Combination.MAX_COLORS;
+  private boolean isCombinationLengthValid(){
+    if (this.colors.size() != Combination.MAX_COLORS) {
+      usantatecla.mastermind.utils.Console.instance().writeln(Errors.WRONG_LENGHT.getMessage());
+      return false;
+    }
+    return true;
   }
 
-  private boolean isAllCombinationColorsValid(String combination){
-     for (int i=0; i< combination.length(); i++){
-       if ( Color.getColorBySymbol(String.valueOf(combination.charAt(i))) == null) return false;
-     }
-     return true;
+  private boolean isAllColorCombinationsValid() {
+    for (Color color: this.colors){
+       if (Color.getColorBySymbol(color.getSymbol()) == null){
+         usantatecla.mastermind.utils.Console.instance().writeln(Errors.WRONG_COLORS.getWrongColorMessage(Color.getAllSymbols()));
+         return false;
+       }
+    }
+    return true;
   }
 
-  @Override
-  public void writeCombination() {
-
-  }
 }

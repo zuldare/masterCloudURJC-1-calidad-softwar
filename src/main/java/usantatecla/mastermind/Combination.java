@@ -1,23 +1,15 @@
 package usantatecla.mastermind;
 
-import java.util.Random;
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class Combination {
 
   protected static final int MAX_COLORS = 4;
-  protected final Color[] colors;
+  protected List<Color> colors;
 
   public Combination() {
-    this.colors = new Color[MAX_COLORS];
+    this.colors = new ArrayList<>();
   }
 
-  protected String colorsToString(){
-    StringBuilder sb = new StringBuilder();
-    for (int i = 0; i< MAX_COLORS; i++){
-      sb.append(colors[i].getSymbol());
-    }
-    return sb.toString();
-  }
-
-  public abstract void writeCombination();
 }

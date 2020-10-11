@@ -12,7 +12,7 @@ public class SecretCombination extends Combination {
 
   private void setRandomColorToEachCombinationPosition() {
     for (int i = 0; i < MAX_COLORS; i++) {
-      this.colors[i] = Color.getColor(this.getRandomNumberUsingNextInt(0, Color.values().length));
+      this.colors.add(Color.getColor(this.getRandomNumberUsingNextInt(0, Color.values().length)));
     }
   }
 
@@ -21,10 +21,13 @@ public class SecretCombination extends Combination {
     return random.nextInt(max - min) + min;
   }
 
-  @Override
   public void writeCombination() {
+    StringBuffer sb = new StringBuffer("");
+    for(Color color: colors){
+      sb.append(color.getSymbol());
+    }
     usantatecla.mastermind.utils.Console.instance()
-        .writeln(Message.SECRET_COMBINATION.getMessageSecretCombination(this.colorsToString()));
+        .writeln(Message.SECRET_COMBINATION.getMessageSecretCombination(sb.toString()));
   }
 
   public Result checkResultFromProposedCombination(ProposedCombination proposedCombination){
@@ -38,15 +41,15 @@ public class SecretCombination extends Combination {
   }
 
   private int getWhites(ProposedCombination proposedCombination, int whites) {
-    for (int i=0; i< this.colors.length; i++){
-       whites = whites + (Arrays.asList(this.colors).contains(proposedCombination.getProposedCombination()[i])?1:0);
+    for (int i=0; i< this.colors.size(); i++){
+       whites = whites + (this.colors.contains(proposedCombination.getProposedCombination().get(i))?1:0);
     }
     return whites;
   }
 
   private int getBlacks(ProposedCombination proposedCombination, int blacks) {
-    for (int i=0; i< this.colors.length; i++){
-       blacks = blacks + (proposedCombination.getProposedCombination()[i] == this.colors[i] ? 1 : 0);
+    for (int i=0; i< this.colors.size(); i++){
+       blacks = blacks + (proposedCombination.getProposedCombination().get(i) == this.colors.get(i) ? 1 : 0);
     }
     return blacks;
   }
