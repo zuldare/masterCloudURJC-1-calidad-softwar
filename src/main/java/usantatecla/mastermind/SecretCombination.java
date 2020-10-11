@@ -5,7 +5,7 @@ import usantatecla.utils.Console;
 
 class SecretCombination extends Combination {
 
-  public SecretCombination(){
+  SecretCombination(){
     super();
     this.setRandomColorToEachCombinationPosition();
   }
@@ -21,7 +21,7 @@ class SecretCombination extends Combination {
     return random.nextInt(max - min) + min;
   }
 
-  public void writeCombination() {
+  void writeCombination() {
     StringBuffer sb = new StringBuffer("");
     for(Color color: colors){
       sb.append(color.getSymbol());
@@ -29,7 +29,7 @@ class SecretCombination extends Combination {
     Console.instance().writeln(Message.SECRET_COMBINATION.getMessageSecretCombination(sb.toString()));
   }
 
-  public Result checkResultFromProposedCombination(ProposedCombination proposedCombination){
+  Result checkResultFromProposedCombination(ProposedCombination proposedCombination){
     int blacks = 0;
     int whites = 0;
 

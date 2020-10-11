@@ -5,26 +5,26 @@ enum Color {
 
   private String symbol;
 
-  Color(String symbol){
+  private Color(String symbol){
     this.symbol = symbol;
   }
 
-  public static Color getColor(int number){
+  static Color getColor(int number){
     return Color.values()[number];
   }
 
-  public String getSymbol(){
+  String getSymbol(){
     return this.symbol;
   }
 
-  public static Color getColorBySymbol(String symbol){
+  static Color getColorBySymbol(String symbol){
     for (Color color: Color.values()){
       if (color.getSymbol().equalsIgnoreCase(symbol)) return color;
     }
     return null;
   }
 
-  public static String getAllSymbols(){
+  static String getAllSymbols(){
     String values = "";
     for(Color color: Color.values()){
       values = values + color.getSymbol();

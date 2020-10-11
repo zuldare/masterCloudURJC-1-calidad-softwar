@@ -10,11 +10,11 @@ enum Errors {
     this.message = message;
   }
 
-  public String getMessage(){
+  String getMessage(){
     return this.message;
   }
 
-  public String getWrongColorMessage(String colorsCombination){
+  String getWrongColorMessage(String colorsCombination){
     assert this == Errors.WRONG_COLORS;
     return Errors.WRONG_COLORS.getMessage().replaceFirst("#colorsCombination", colorsCombination);
   }
