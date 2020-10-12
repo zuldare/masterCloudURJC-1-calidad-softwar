@@ -24,12 +24,11 @@
  * Interfaz: texto
  * Distribución: standalone
  * Persistencia: no
----------------------------------------------------
+
 ### Modelo del dominio
  
   ![Vocabulario](diagrams/Vocabulary.png)
 
----------------------------------------------------  
 ### Vista lógica/diseño
 
 Aplicación del Modelo del Dominio mediante Estrategias de Análisis Formal, Análisis Clásico, Experto del Dominio, Reparto de Responsabilidades.
@@ -41,8 +40,9 @@ Aplicación del Modelo del Dominio mediante Estrategias de Análisis Formal, An�
 #### Paquetes
 ![Paquetes](pics/Packages.png)
 
---------------------------------------------------
+
 ### Calidad del Software
+
 #### Diseño
     * *Método largo*: Método "play" de MastermindGameLauncher...
 
@@ -52,14 +52,12 @@ Aplicación del Modelo del Dominio mediante Estrategias de Análisis Formal, An�
     * *Alto acoplamiento*: los Modelos con cada nueva tecnología de interfaz (consola, gráficos, web)
     * *Baja cohesión*: cada Modelo está gestionando sus atributos y las tecnologías de interfaz
     * *Open/Close*: hay que modificar los modelos que estaban funcionando previamente para escoger una tecnología de vista u otra (if’s anidados)
----------------------------------------------------
+
 ### Vista de Desarrollo/Implantación
 ![DevelopmentImplementation](pics/DevelopmentImplementation.png)    
 
----------------------------------------------------
 ### Vista de Despliegue/Física
 ![Despliegue](pics/Despliegue.png)
 
----------------------------------------------------
 ### Vista de Procesos
 * No hay concurrencia
