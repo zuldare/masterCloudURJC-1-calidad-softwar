@@ -1,8 +1,7 @@
 # MASTERMIND.  DOMAIN MODEL
 
-Autor: Jaime Hernández Ortiz
-Email: jaime.hernandezortiz@gmail.com
-Version 0.0.1-SNAPSHOT
+* Autor: Jaime Hernández Ortiz  jaime.hernandezortiz@gmail.com
+* Versión: 0.0.1-SNAPSHOT
 
 ## Indice
    * Requisitos 
