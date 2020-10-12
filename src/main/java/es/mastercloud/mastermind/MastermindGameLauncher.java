@@ -1,4 +1,4 @@
-package usantatecla.mastermind;
+package es.mastercloud.mastermind;
 
 public class MastermindGameLauncher {
 

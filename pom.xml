@@ -4,7 +4,7 @@
   <groupId>usantatecla</groupId>
   <artifactId>mastermind</artifactId>
   <packaging>jar</packaging>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1</version>
   <name>mastermind</name>
   <url>http://maven.apache.org</url>
   <dependencies>

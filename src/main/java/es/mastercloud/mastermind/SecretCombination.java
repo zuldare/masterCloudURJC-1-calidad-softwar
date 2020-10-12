@@ -1,7 +1,7 @@
-package usantatecla.mastermind;
+package es.mastercloud.mastermind;
 
+import es.mastercloud.utils.Console;
 import java.util.Random;
-import usantatecla.utils.Console;
 
 class SecretCombination extends Combination {
 

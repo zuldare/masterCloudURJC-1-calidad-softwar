@@ -1,6 +1,6 @@
-package usantatecla.mastermind;
+package es.mastercloud.mastermind;
 
-import usantatecla.utils.Console;
+import es.mastercloud.utils.Console;
 
 class Board {
 

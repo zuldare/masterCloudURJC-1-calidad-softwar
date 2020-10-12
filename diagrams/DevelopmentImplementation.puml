@@ -1,0 +1,13 @@
+@startuml
+
+component mastermind.jar
+package mastermind
+package mastermind.utils
+package java.io
+package java.util
+
+mastermind.jar  *--> mastermind
+mastermind.jar  *--> mastermind.utils
+mastermind.jar  *--> java.io
+mastermind.jar  *--> java.util
+@enduml

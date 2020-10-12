@@ -1,7 +1,7 @@
-package usantatecla.mastermind;
+package es.mastercloud.mastermind;
 
-import usantatecla.utils.Console;
-import usantatecla.utils.YesNoDialog;
+import es.mastercloud.utils.Console;
+import es.mastercloud.utils.YesNoDialog;
 
 class Mastermind {
 

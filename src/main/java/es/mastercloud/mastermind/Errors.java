@@ -1,4 +1,4 @@
-package usantatecla.mastermind;
+package es.mastercloud.mastermind;
 
 enum Errors {
   WRONG_LENGHT("Wrong proposed combination length"),
