@@ -100,6 +100,35 @@ enum Message {
   String getResultCombination(String combination, int blacks, int whites)
 }
 
+class Console {
+	+ static Console console
+	+ static Console instance()
+	- BufferedReader bufferedReader
+	+ String readString(String title)
+	+ String readString()
+	+ int readInt(String title)
+	+ char readChar(String title)
+	+ void writeln()
+	+ void write(String string)
+	+ void write(int integer)
+	+ void writeln(String string)
+	+ void writeln(int integer)
+	+ void write(char character)
+	+ void writeError(String format)
+}
+
+class YesNoDialog {
+	- static final char AFFIRMATIVE = 'y'
+	- static final char NEGATIVE = 'n'
+	- static final String SUFFIX
+	- static final String MESSAGE
+	- char answer
+	+ boolean read(String message)
+	- boolean isAfirmative()
+	- char getAnswer()
+	- boolean isNegative()
+}
+
 MastermindGameLauncher ..> Mastermind
 Mastermind *-down-> Board
 
@@ -116,5 +145,10 @@ SecretCombination ...> Message
 ProposedCombination ...> Message
 ProposedCombination ...> Errors
 
+Mastermind ..> Console
+Mastermind ..> YesNoDialog
+Board ..> Console
+ProposedCombination ..> Console
+Result ..> Console
 
 @enduml
