@@ -44,14 +44,14 @@ Aplicación del Modelo del Dominio mediante Estrategias de Análisis Formal, An�
 ### Calidad del Software
 
 #### Diseño
-    * *Método largo*: Método "play" de MastermindGameLauncher...
+    * Método largo: Método "play" de MastermindGameLauncher...
 
 #### Rediseño
-    * *Nueva interfaz*: Gráfica    
-    * *Clases Grandes*: los Modelos asumen la responsabilidad y crecen en líneas, métodos y atributos con cada nueva tecnología
-    * *Alto acoplamiento*: los Modelos con cada nueva tecnología de interfaz (consola, gráficos, web)
-    * *Baja cohesión*: cada Modelo está gestionando sus atributos y las tecnologías de interfaz
-    * *Open/Close*: hay que modificar los modelos que estaban funcionando previamente para escoger una tecnología de vista u otra (if’s anidados)
+    * Nueva interfaz: Gráfica    
+    * Clases Grandes: los Modelos asumen la responsabilidad y crecen en líneas, métodos y atributos con cada nueva tecnología
+    * Alto acoplamiento: los Modelos con cada nueva tecnología de interfaz (consola, gráficos, web)
+    * Baja cohesión: cada Modelo está gestionando sus atributos y las tecnologías de interfaz
+    * Open/Close: hay que modificar los modelos que estaban funcionando previamente para escoger una tecnología de vista u otra (if’s anidados)
 
 ### Vista de Desarrollo/Implantación
 ![DevelopmentImplementation](pics/DevelopmentImplementation.png)    
