@@ -1,7 +1,7 @@
-package usantatecla.mastermind;
+package es.mastercloud.mastermind;
 
+import es.mastercloud.utils.Console;
 import java.util.List;
-import usantatecla.utils.Console;
 
 class ProposedCombination extends Combination {
 
@@ -29,7 +29,7 @@ class ProposedCombination extends Combination {
   }
 
   private boolean isCombinationLengthValid(){
-    if (this.colors.size() != Combination.MAX_COLORS) {
+    if (this.colors.size() != MAX_COLORS) {
       Console.instance().writeln(Errors.WRONG_LENGHT.getMessage());
       return false;
     }

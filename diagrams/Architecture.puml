@@ -1,0 +1,12 @@
+@startuml
+
+package "es.mastercloud.mastermind" {}
+package "java.util" {}
+package "java.io" {}
+package "es.mastercloud.utils"{}
+
+
+"es.mastercloud.mastermind" ..> "es.mastercloud.utils"
+"es.mastercloud.utils" ..> "java.io"
+"es.mastercloud.mastermind" ..> "java.util"
+@enduml

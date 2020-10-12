@@ -1,4 +1,4 @@
-package usantatecla.mastermind;
+package es.mastercloud.mastermind;
 
 import java.util.ArrayList;
 import java.util.List;

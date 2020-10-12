@@ -1,4 +1,4 @@
-package usantatecla.mastermind;
+package es.mastercloud.mastermind;
 
 enum Color {
   RED("R"), BLUE("B"), YELLOW("Y"), GREEN("G"), ORANGE("O"), PURPLE("P");
