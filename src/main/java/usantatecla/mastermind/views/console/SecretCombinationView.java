@@ -1,9 +1,9 @@
-package usantatecla.mastermind.views;
+package usantatecla.mastermind.views.console;
 
 import usantatecla.mastermind.models.SecretCombination;
 import usantatecla.utils.WithConsoleView;
 
-class SecretCombinationView extends WithConsoleView {
+public class SecretCombinationView extends WithConsoleView {
 
 	SecretCombinationView() {
 		super();
