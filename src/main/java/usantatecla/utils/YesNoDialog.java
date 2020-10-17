@@ -1,5 +1,4 @@
-package es.mastercloud.utils;
-
+package usantatecla.utils;
 
 public class YesNoDialog {
 
