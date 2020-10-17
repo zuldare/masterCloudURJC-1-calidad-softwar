@@ -1,4 +1,4 @@
-package usantatecla.mastermind.views;
+package usantatecla.mastermind.views.console;
 
 import usantatecla.utils.Console;
 
@@ -17,6 +17,9 @@ enum MessageView {
 	private Console console;
 	
 	private MessageView(String message) {
+			if (this.console == null) {
+				this.console = new Console();
+			}
 		this.message = message;
 	}
 
