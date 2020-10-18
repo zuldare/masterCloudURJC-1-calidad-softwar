@@ -1,12 +1,12 @@
 package usantatecla.mastermind.views.console;
 
 
+import usantatecla.mastermind.controllers.StartController;
+
 public class StartView {
 
-  StartView(){
-  }
-
-  void interact(){
+  void interact(StartController startController){
+    startController.start();
     MessageView.TITLE.writeln();
     new SecretCombinationView().writeln();
   }
