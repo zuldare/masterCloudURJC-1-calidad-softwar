@@ -9,6 +9,11 @@ public class StartController extends Controller {
     super(game, state);
   }
 
+  @Override
+  public void accept(VisitorController visitorController) {
+    visitorController.visit(this);
+  }
+
   public void start(){
     this.state.next();
   }

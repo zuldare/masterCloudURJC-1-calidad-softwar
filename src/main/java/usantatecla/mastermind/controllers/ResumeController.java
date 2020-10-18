@@ -9,8 +9,9 @@ public class ResumeController extends Controller {
     super(game, state);
   }
 
-  public void clear(){
-    this.game.clear();
+  @Override
+  public void accept(VisitorController visitorController) {
+    visitorController.visit(this);
   }
 
   public void resume(boolean isNewGame){

@@ -13,4 +13,6 @@ public abstract class Controller {
     this.state = state;
   }
 
+  public abstract void accept(VisitorController visitorController);
+
 }

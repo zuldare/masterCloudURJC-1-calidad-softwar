@@ -11,6 +11,11 @@ public class ProposalController extends Controller {
     super(game, state);
   }
 
+  @Override
+  public void accept(VisitorController visitorController) {
+    visitorController.visit(this);
+  }
+
   public void addProposedCombination(ProposedCombination proposedCombination) {
     this.game.addProposedCombination(proposedCombination);
   }

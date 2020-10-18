@@ -1,6 +1,5 @@
 package usantatecla.mastermind.views.console;
 
-import usantatecla.mastermind.controllers.Controller;
 import usantatecla.mastermind.controllers.ProposalController;
 import usantatecla.mastermind.controllers.ResumeController;
 import usantatecla.mastermind.controllers.StartController;
@@ -19,13 +18,18 @@ public class ViewConsole extends View {
   }
 
   @Override
-  public void interact(Controller controller) {
-    if (controller instanceof StartController) {
-        this.startView.interact((StartController) controller);
-    } else if (controller instanceof ProposalController) {
-        this.proposalView.interact((ProposalController) controller);
-    } else {
-        this.resumeView.interact((ResumeController) controller);
-    }
+  public void visit(StartController startController) {
+    this.startView.interact(startController);
   }
+
+  @Override
+  public void visit(ProposalController proposalController) {
+    this.proposalView.interact(proposalController);
+  }
+
+  @Override
+  public void visit(ResumeController resumeController) {
+    this.resumeView.interact(resumeController);
+  }
+
 }
