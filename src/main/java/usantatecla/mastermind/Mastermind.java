@@ -1,27 +1,19 @@
 package usantatecla.mastermind;
 
-import usantatecla.mastermind.controllers.ProposalController;
-import usantatecla.mastermind.controllers.ResumeController;
-import usantatecla.mastermind.controllers.StartController;
-import usantatecla.mastermind.models.Game;
+import usantatecla.mastermind.controllers.Logic;
 import usantatecla.mastermind.views.View;
-import usantatecla.mastermind.views.console.ViewConsole;
 
 public abstract class Mastermind {
 
  	private View view;
-	private StartController startController;
-	private ProposalController proposalController;
-	private ResumeController resumeController;
+	private Logic logic;
+
 	protected Mastermind(){
-		Game game = new Game();
-		this.startController = new StartController(game);
-		this.proposalController = new ProposalController(game);
-		this.resumeController = new ResumeController(game);
-		this.view = this.createView(startController, proposalController, resumeController);
+ 		this.logic = new Logic();
+		this.view = this.createView(this.logic);
 	}
 
-	protected abstract View createView(StartController startController, ProposalController proposalController, ResumeController resumeController);
+	protected abstract View createView(Logic logic);
 
 	protected void play(){
 		this.view.interact();
