@@ -1,9 +1,19 @@
 package usantatecla.mastermind.views;
 
+import usantatecla.mastermind.controllers.ProposalController;
+import usantatecla.mastermind.controllers.ResumeController;
+import usantatecla.mastermind.controllers.StartController;
+
 public abstract class View {
 
-	public View(){
+	protected StartController startController;
+	protected ProposalController proposalController;
+	protected ResumeController resumeController;
 
+	public View(StartController startController, ProposalController proposalController, ResumeController resumeController){
+		this.startController = startController;
+		this.proposalController = proposalController;
+		this.resumeController = resumeController;
 	}
 
 	public void interact() {
