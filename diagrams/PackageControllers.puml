@@ -1,0 +1,54 @@
+@startuml
+
+title Paquete mastermind.controllers
+
+
+package mastermind.controllers{
+
+  class Logic  {
+    - Game game
+    - State state
+    - Map<StateValue, Controller> controllerDictionary
+    + Logic()
+    + Controller getController()
+    - Map<StateValue, Controller> createControllerDictionary()
+  }
+
+  abstract class Controller {
+      # Game game
+      # State state
+      ~ Controller(Game game, State state)
+      + abstract void accept(VisitorController visitorController)
+    }
+
+    class ProposalController {
+      + ProposalController(Game game, State state)
+      + void accept(VisitorController visitorController)
+      + void addProposedCombination(ProposedCombination proposedCombination)
+      + int getAttempts()
+      + ProposedCombination getProposedCombination(int position)
+      + Result getResult(int position)
+      + boolean isWinner()
+      + boolean isLooser()
+    }
+
+    class ResumeController {
+      + ResumeController(Game game, State state)
+      + void accept(VisitorController visitorController)
+      + void resume(boolean isNewGame)
+    }
+
+    class StartController {
+      + StartController(Game game, State state)
+      + void accept(VisitorController visitorController)
+      + void start()
+    }
+}
+
+Controller *--> mastermind.models.Game
+Controller *--> mastermind.models.State
+Controller <|-- StartController
+Controller <|-- ProposalController
+Controller <|-- ResumeController
+
+@enduml

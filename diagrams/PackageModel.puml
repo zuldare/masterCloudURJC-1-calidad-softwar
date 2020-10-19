@@ -1,0 +1,90 @@
+@startuml
+
+title Paquete mastermind.models
+
+package mastermind.enum {
+  enum StateValue {
+    + {static}CLOSE: StateValue
+    + {static}OPEN: StateValue
+    + {static}FINISHED: StateValue
+    + {static}EXIT: StateValue
+  }
+}
+package mastermind.models {
+
+  enum Color {
+    + {static} RED: Color
+    + {static} BLU : Color
+    + {static} YELLOW: Color
+    + {static} GREEN: Color
+    + {static} ORANGE: Color
+    + {static} PURPLE: Color
+    + {static} int length()
+  }
+
+  abstract class Combination {
+    - {static} final int WIDTH = 4
+    # List<Color> colors
+    # Combination ()
+    + {static} int getWidth()
+  }
+
+  enum Error {
+    + {static} DUPLICATED: Error
+    + {static} WRONG_CHARACTERS: Error
+    + {static} WRONG_LENGTH: Error
+  }
+
+  class Game {
+    - static final int MAX_LONG = 10
+    - SecretCombination secretCombination
+    - List<ProposedCombination> proposedCombinations
+    - List<Result> results
+    - int attempts
+    + Game()
+    + void clear()
+    + void addProposedCombination(ProposedCombination proposedCombination)
+    + boolean isLooser()
+    + boolean isWinner()
+    + int getAttempts()
+    + ProposedCombination getProposedCombination(int position)
+    + Result getResult(int position)
+  }
+
+  class ProposedCombination {
+    + boolean contains(Color color, int position)
+    + boolean contains(Color color)
+    + List<Color> getColors()
+  }
+
+  class Result {
+    - int blacks = 0
+    - int whites = 0
+    ~ Result(int blacks, int whites)
+    ~ boolean isWinner()
+    + int getBlacks()
+    + int getWhites()
+  }
+
+  class SecretCombination {
+    ~ SecretCombination()
+    ~ Result getResult(ProposedCombination proposedCombination)
+  }
+
+  class State {
+    - StateValue stateValue
+    + State()
+    + void initialize()
+    + void next()
+    + StateValue getStateValue()
+  }
+}
+
+State o-up-> StateValue
+Combination o--> Color
+ Game o--> SecretCombination
+ Game o--> ProposedCombination
+ Game o--> Result
+ Combination <|-- ProposedCombination
+ Combination <|-- SecretCombination
+@enduml

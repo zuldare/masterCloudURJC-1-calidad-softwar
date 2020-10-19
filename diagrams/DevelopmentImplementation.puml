@@ -5,8 +5,14 @@ package mastermind
 package mastermind.utils
 package java.io
 package java.util
+package mastermind.views
+package mastermind.models
+package mastermind.controllers
 
 mastermind.jar  *--> mastermind
+mastermind.jar  *--> mastermind.views
+mastermind.jar  *--> mastermind.models
+mastermind.jar  *--> mastermind.controllers
 mastermind.jar  *--> mastermind.utils
 mastermind.jar  *--> java.io
 mastermind.jar  *--> java.util

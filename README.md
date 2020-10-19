@@ -35,11 +35,16 @@ Aplicación del Modelo del Dominio mediante Estrategias de Análisis Formal, An�
  
 #### Arquitectura
 
-![Arquitectura](pics/Architecture.png)
+ TO BE COMPLETED
 
 #### Paquetes
-![Paquetes](pics/Packages.png)
+![Paquetes Mastermind](pics/PackageMastermind.png)
 
+![Paquetes Model](pics/PackageModel.png)
+
+![Paquetes Views](pics/PackageViews.png)
+
+![Paquetes Controller](pics/PackageControllers.png)
 
 ### Calidad del Software
 
