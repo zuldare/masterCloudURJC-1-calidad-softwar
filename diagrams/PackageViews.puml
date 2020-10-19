@@ -1,0 +1,247 @@
+@startuml
+
+title Paquete mastermind.views
+
+package mastermind.views {
+  abstract class View  {
+  	+ void interact(Controller controller)
+  }
+}
+
+package mastermind.controllers{
+  class Logic  {
+    - Game game
+    - State state
+    - Map<StateValue, Controller> controllerDictionary
+    + Logic()
+    + Controller getController()
+    - Map<StateValue, Controller> createControllerDictionary()
+  }
+
+  abstract class Controller {
+    # Game game
+    # State state
+    ~ Controller(Game game, State state)
+    + abstract void accept(VisitorController visitorController)
+  }
+
+  interface VisitorController {
+    void visit(StartController startController)
+    void visit(ProposalController proposalController)
+    void visit(ResumeController resumeController)
+  }
+}
+
+package mastermind.views.console {
+ class ColorView {
+ 	- static final char[] INITIALS = {'r', 'b', 'y', 'g', 'o', 'p'}
+ 	- Color color
+ 	# ColorView(Color color)
+ 	# {static} String allInitials()
+ 	# {static} Color getInstance(char character)
+ 	# void write()
+ }
+
+
+ class ErrorView {
+ 	- static final String[] MESSAGES
+ 	- Error error
+ 	# ErrorView(Error error)
+ 	# void writeln()
+ }
+
+
+
+ class ProposalView {
+   - SecretCombinationView secretCombinationView
+   ~ ProposalView()
+   ~ boolean interact(ProposalController proposalController)
+ }
+
+ class ProposedCombinationView  {
+ 	- ProposedCombination proposedCombination
+ 	~ ProposedCombinationView(ProposedCombination proposedCombination)
+ 	~ void write()
+ 	~ void read()
+ }
+
+ class ResultView {
+ 	- Result result
+ 	~ ResultView(Result result)
+ 	~ void writeln()
+ }
+
+ class ResumeView {
+   ~ boolean interact(ResumeController resumeController)
+ }
+
+ class SecretCombinationView {
+ 	~ SecretCombinationView()
+ 	~ void writeln()
+ }
+
+ class StartView {
+   ~ void interact(StartController startController)
+ }
+
+ class ViewConsole {
+   - StartView startView
+   - ProposalView proposalView
+   - ResumeView resumeView
+   + ViewConsole()
+   + void visit(StartController startController)
+   + void visit(ProposalController proposalController)
+   + void visit(ResumeController resumeController)
+ }
+
+ enum MessageView {
+  	~ {static} ATTEMPTS("#attempts attempt(s): ")
+  	~ {static} SECRET("*")
+  	~ {static} RESUME("Do you want to continue")
+  	~ {static} RESULT(" --> #blacks blacks and #whites whites")
+  	~ {static} PROPOSED_COMBINATION("Propose a combination: ")
+  	~ {static} TITLE("----- MASTERMIND -----")
+  	~ {static} WINNER("You've won!!! ;-)")
+  	~ {static} LOOSER("You've lost!!! :-(")
+  	- String message
+  	- Console console
+  	- MessageView(String message)
+  	~ void write()
+  	~ void writeln()
+  	~ void writeln(int attempts)
+  	~ void writeln(int blacks, int whites)
+  }
+}
+
+package mastermind.utils {
+  abstract class WithConsoleView {
+    # Console console
+    # WithConsoleView
+  }
+}
+
+VisitorController <|-- View
+View <|-- ViewConsole
+ViewConsole *---> StartView
+ViewConsole *---> ProposalView
+ViewConsole *---> ResumeView
+WithConsoleView <|-down- ColorView
+WithConsoleView <|-down- ErrorView
+WithConsoleView <|-down- ProposalView
+WithConsoleView <|-down- ProposedCombinationView
+WithConsoleView <|-down- ResultView
+WithConsoleView <|-down- SecretCombinationView
+
+'abstract class mastermind.Mastermind {
+' 	- View view
+'	- Logic logic
+'	# Mastermind()
+'	# abstract View createView()
+'	# void play()
+'}
+'
+'class mastermind.MastermindConsole {
+'  # View createView()
+'  + {static} void main(String[] args)
+'}
+'
+
+'
+'class mastermind.controllers.Logic  {
+'  - Game game
+'  - State state
+'  - Map<StateValue, Controller> controllerDictionary
+'  + Logic()
+'  + Controller getController()
+'  - Map<StateValue, Controller> createControllerDictionary()
+'}
+'
+'class mastermind.controllers.ProposalController {
+'  + ProposalController(Game game, State state)
+'  + void accept(VisitorController visitorController)
+'  + void addProposedCombination(ProposedCombination proposedCombination)
+'  + int getAttempts()
+'  + ProposedCombination getProposedCombination(int position)
+'  + Result getResult(int position)
+'  + boolean isWinner()
+'  + boolean isLooser()
+'}
+
+
+'
+'enum mastermind.enum.StateValue {
+'  + {static}CLOSE: StateValue
+'  + {static}OPEN: StateValue
+'  + {static}FINISHED: StateValue
+'  + {static}EXIT: StateValue
+'}
+'
+
+'
+'abstract class mastermind.views.View  {
+'	+ void interact(Controller controller)
+'}
+'
+
+'
+'abstract class mastermind.views.View {
+'	+ void interact(Controller controller)
+'}
+'
+'
+'
+'class mastermind.utils.ClosedInterval {
+'	- int min
+'	- int max
+'	+ ClosedInterval(int min, int max)
+'	+ boolean includes(int value)
+'}
+'
+'class mastermind.utils.Console {
+'	- BufferedReader bufferedReader
+'	+ String readString(String title)
+'	+ String readString()
+'	+ int readInt(String title)
+'	+ char readChar(String title)
+'	+ void writeln()
+'	+ void write(String string)
+'	+ void writeln(String string)
+'	+ void write(char character)
+'	- void writeError(String format)
+'}
+'
+'abstract class mastermind.utils.WithConsoleView {
+'	# Console console
+'	# WithConsoleView()
+'}
+'
+'mastermind.Mastermind *-down-> mastermind.views.View
+'mastermind.Mastermind *-down--> mastermind.controllers.Logic
+'mastermind.Mastermind <|-left- mastermind.MastermindConsole
+'mastermind.controllers.VisitorController <|-- mastermind.views.View
+'
+'mastermind.controllers.Controller <|-- mastermind.controllers.StartController
+'mastermind.controllers.Controller <|-- mastermind.controllers.ProposalController
+'mastermind.controllers.Controller <|-- mastermind.controllers.ResumeController
+'
+'
+'mastermind.controllers.Controller *-left--> mastermind.models.Game
+'mastermind.controllers.Controller *-left--> mastermind.models.State
+'
+'mastermind.controllers.Logic  *---> mastermind.models.Game
+'mastermind.controllers.Logic  *---> mastermind.models.State
+'mastermind.controllers.Logic  *---> java.util.HashMap
+'
+'mastermind.models.State *--> mastermind.enum.StateValue
+'mastermind.models.Combination <|-- mastermind.models.SecretCombination
+'
+''mastermind.views.console.SecretCombinationView --|> mastermind.utils.WithConsoleView
+''
+''mastermind.controllers.Logic o--> mastermind.models.Game
+''mastermind.controllers.Logic o--> mastermind.models.State
+''
+''mastermind.views.console.ProposalView --|> mastermind.utils.WithConsoleView
+''mastermind.views.console.ResultView --|> mastermind.utils.WithConsoleView
+''utils.WithConsoleView <|-- mastermind.views.console.ErrorView
+
+@enduml

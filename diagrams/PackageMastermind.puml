@@ -1,0 +1,42 @@
+@startuml
+
+title Paquete mastermind
+
+package mastermind {
+  abstract class Mastermind {
+    - View view
+    - Logic logic
+    # Mastermind()
+    # abstract View createView()
+    # void play()
+  }
+
+  class MastermindConsole {
+    # View createView()
+    + {static} void main(String[] args)
+  }
+
+  Mastermind <|-- MastermindConsole
+}
+
+package mastermind.views {
+  abstract class View  {
+  	+ void interact(Controller controller)
+  }
+}
+
+package mastermind.controllers{
+  class Logic  {
+    - Game game
+    - State state
+    - Map<StateValue, Controller> controllerDictionary
+    + Logic()
+    + Controller getController()
+    - Map<StateValue, Controller> createControllerDictionary()
+  }
+}
+
+Mastermind *--> Logic
+Mastermind o--> View
+
+@enduml
