@@ -1,14 +1,18 @@
 package usantatecla.mastermind.controllers;
 
-import usantatecla.mastermind.models.Game;
-import usantatecla.mastermind.models.ProposedCombination;
-import usantatecla.mastermind.models.Result;
-import usantatecla.mastermind.models.State;
+import usantatecla.mastermind.models.*;
 
-public class ProposalController extends Controller {
+public class ProposalController extends Controller implements AceptorController {
 
-  public ProposalController(Game game, State state) {
-    super(game, state);
+  private ActionController actionController;
+  private UndoController undoController;
+  private RedoController redoController;
+
+  public ProposalController(Session session) {
+    super(session);
+    this.actionController = new ActionController(this.session);
+    this.undoController = new UndoController(this.session);
+    this.redoController = new RedoController(this.session);
   }
 
   @Override
@@ -17,26 +21,27 @@ public class ProposalController extends Controller {
   }
 
   public void addProposedCombination(ProposedCombination proposedCombination) {
-    this.game.addProposedCombination(proposedCombination);
+    this.actionController.addProposedCombination(proposedCombination);
   }
 
   public int getAttempts() {
-    return this.game.getAttempts();
+    return this.actionController.getAttempts();
   }
 
   public ProposedCombination getProposedCombination(int position) {
-    return this.game.getProposedCombination(position);
+    return this.actionController.getProposedCombinationAt(position);
   }
 
   public Result getResult(int position) {
-    return this.game.getResult(position);
+    return this.actionController.getResultAt(position);
   }
 
   public boolean isWinner() {
-    return this.game.isWinner();
+    return this.actionController.isWinner();
   }
 
   public boolean isLooser() {
-    return this.game.isLooser();
+    return this.actionController.isLooser();
   }
+
 }

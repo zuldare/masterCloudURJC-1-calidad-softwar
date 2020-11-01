@@ -14,6 +14,14 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+
+    <!-- https://mvnrepository.com/artifact/nl.talsmasoftware/umldoclet -->
+    <dependency>
+      <groupId>nl.talsmasoftware</groupId>
+      <artifactId>umldoclet</artifactId>
+      <version>2.0.12</version>
+    </dependency>
+
   </dependencies>
   <build>
     <plugins>
@@ -46,6 +54,34 @@
           </execution>
         </executions>
       </plugin>
+
+<!--        <plugin>-->
+<!--          <groupId>org.apache.maven.plugins</groupId>-->
+<!--          <artifactId>maven-javadoc-plugin</artifactId>-->
+<!--          <version>3.0.1</version>-->
+<!--          <executions>-->
+<!--            <execution>-->
+<!--              <id>attach-javadocs</id>-->
+<!--              <goals>-->
+<!--                <goal>jar</goal>-->
+<!--              </goals>-->
+<!--              <configuration>-->
+<!--                <doclet>nl.talsmasoftware.umldoclet.UMLDoclet</doclet>-->
+<!--                <docletArtifact>-->
+<!--                  <groupId>nl.talsmasoftware</groupId>-->
+<!--                  <artifactId>umldoclet</artifactId>-->
+<!--                  <version>2.0.12</version>-->
+<!--                </docletArtifact>-->
+<!--                <javadocExecutable>/home/jaime/.jdks/openjdk-15.0.1/bin/javadoc</javadocExecutable>-->
+
+<!--                <additionalOptions>-->
+<!--                  <additionalOption></additionalOption>-->
+<!--                </additionalOptions>-->
+<!--              </configuration>-->
+<!--            </execution>-->
+<!--          </executions>-->
+<!--        </plugin>-->
+
     </plugins>
   </build>
 </project>

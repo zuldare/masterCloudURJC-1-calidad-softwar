@@ -44,12 +44,21 @@ public class Game {
 		return this.attempts;
 	}
 
-	public ProposedCombination getProposedCombination(int position) {
+	public ProposedCombination getProposedCombinationAt(int position) {
 		return this.proposedCombinations.get(position);
 	}
 
-	public Result getResult(int position) {
+	public Result getResultAt(int position) {
 		return this.results.get(position);
 	}
 
+	public void setGameMemento(GameMemento gameMemento) {
+		this.proposedCombinations = gameMemento.getProposedCombinations();
+		this.results = gameMemento.getResults();
+		this.attempts = gameMemento.getAttempts();
+	}
+
+	public GameMemento createGameMemento() {
+		return new GameMemento(this.proposedCombinations, this.results, this.attempts);
+	}
 }

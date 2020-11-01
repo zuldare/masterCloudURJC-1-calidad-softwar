@@ -6,7 +6,7 @@ import usantatecla.mastermind.controllers.StartController;
 public class StartView {
 
   void interact(StartController startController){
-    startController.start();
+    startController.next();
     MessageView.TITLE.writeln();
     new SecretCombinationView().writeln();
   }

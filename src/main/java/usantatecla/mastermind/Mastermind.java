@@ -2,6 +2,7 @@ package usantatecla.mastermind;
 
 import static java.util.Objects.nonNull;
 
+import usantatecla.mastermind.controllers.AceptorController;
 import usantatecla.mastermind.controllers.Controller;
 import usantatecla.mastermind.controllers.Logic;
 import usantatecla.mastermind.views.View;
@@ -19,7 +20,7 @@ public abstract class Mastermind {
 	protected abstract View createView();
 
 	protected void play(){
-		Controller controller;
+		AceptorController controller;
 		do {
 			controller = this.logic.getController();
 			if ( nonNull(controller)){
