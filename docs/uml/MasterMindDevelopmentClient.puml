@@ -1,0 +1,31 @@
+@startuml
+
+package "  "  as mastermindServer {
+}
+package "  "  as mastermind.views {
+}
+package "  "  as mastermind.models {
+}
+package "  "  as mastermind.controllers {
+}
+package "  "  as mastermind.utils {
+}
+package "  "  as java.io {
+}
+package "  "  as java.util {
+}
+package "  "  as mastermind.distributed.dispatchers {
+}
+
+[mastermindServer.jar]
+mastermindServer.jar *---> mastermindServer
+mastermindServer.jar *---> mastermind.models
+mastermindServer.jar *---> mastermind.views
+mastermindServer.jar *---> mastermind.controllers
+mastermindServer.jar *---> mastermind.utils
+mastermindServer.jar *---> java.io
+mastermindServer.jar *---> java.util
+mastermindServer.jar *---> mastermind.distributed.dispatchers
+
+
+@enduml

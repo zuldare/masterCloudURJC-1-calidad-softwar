@@ -39,18 +39,23 @@ Modelo/Vista/Presentador con presentador del modelo
 ![architecture](https://github.com/zuldare/masterCloudURJC-1-calidad-softwarblob/mvp.pm.withComposite/docs/images/MasterMindArquitecture.png?raw=true)
 
 ## Paquete mastermind
+NOT FINISHED, THIS VERSION IS FROM COMPOSITE
 ![mastermind](https://github.com/zuldare/masterCloudURJC-1-calidad-softwarblob/mvp.pm.withComposite/docs/images/PackageMasterMind.png?raw=true)
 
-## Paquete mastermind.views
+## Paquete mastermind.views 
+NOT FINISHED, THIS VERSION IS FROM COMPOSITE
 ![mastermind.views](https://github.com/zuldare/masterCloudURJC-1-calidad-softwarblob/mvp.pm.withComposite/docs/images/PackageMasterMindViews.png?raw=true)
 
 ## Paquete mastermind.controllers
+NOT FINISHED, THIS VERSION IS FROM COMPOSITE
 ![mastermind.controllers](https://github.com/zuldare/masterCloudURJC-1-calidad-softwarblob/mvp.pm.withComposite/docs/images/PackageMasterMindControllers.png?raw=true)
 
 ## Paquete mastermind.models
+NOT FINISHED, THIS VERSION IS FROM COMPOSITE
 ![mastermind.models](https://github.com/zuldare/masterCloudURJC-1-calidad-softwarblob/mvp.pm.withComposite/docs/images/PackageMasterMindModels.png?raw=true)
 
 ## Paquete mastermind.utils
+NOT FINISHED, THIS VERSION IS FROM COMPOSITE
 ![mastermind.utils](https://github.com/zuldare/masterCloudURJC-1-calidad-softwarblob/mvp.pm.withComposite/docs/images/PackageMasterMindUtils.png?raw=true)
 
 # Calidad del Software
@@ -61,7 +66,8 @@ Modelo/Vista/Presentador con presentador del modelo
   
 # Vista de Desarrollo/Implementación
 ![development](https://github.com/zuldare/masterCloudURJC-1-calidad-softwarblob/mvp.pm.withComposite/docs/images/MasterMindDevelopment.png?raw=true)
-
+![development](https://github.com/zuldare/masterCloudURJC-1-calidad-softwarblob/mvp.pm.withComposite/docs/images/MasterMindDevelopmentClient.png?raw=true)
+![development](https://github.com/zuldare/masterCloudURJC-1-calidad-softwarblob/mvp.pm.withComposite/docs/images/MasterMindDevelopmentServer.png?raw=true)
 # Vista de Despliegue/Física
 ![deployment](https://github.com/zuldare/masterCloudURJC-1-calidad-softwarblob/mvp.pm.withComposite/docs/images/MasterMindDeployment.png?raw=true)
 

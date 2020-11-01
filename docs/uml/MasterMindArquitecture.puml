@@ -4,16 +4,34 @@
     package mastermind.models #DDDDDD { }
     package mastermind.controller #DDDDDD{ }
     package mastermind.views #DDDDDD { }
+    package mastermind.distributed #DDDDDD { }
+    package mastermind.distributed.dispatchers #DDDDDD { }
     package mastermind.utils #DDDDDD { }
+    package mastermind.controller.impl #DDDDDD {}
+    package java.net{}
     package java.util{ }
     package java.io{ }
 
+    mastermind.distributed .down.> mastermind
+    mastermind.distributed .down.> mastermind.views
+    mastermind.distributed .down.> mastermind.models
+    mastermind.distributed .down.> mastermind.controller
+    mastermind.distributed .down.> mastermind.controller.impl
+    mastermind.distributed .down.> mastermind.distributed.dispatchers
+
+    mastermind .down.> mastermind.controller.impl
     mastermind .down.> mastermind.controller
     mastermind .down.> mastermind.views
-    mastermind.controller .down.> mastermind.models
-    mastermind.views .down.> mastermind.controller
-    mastermind.views .down.> mastermind.utils
-    mastermind.models .down.> java.util
-    mastermind.utils .down.> java.io
 
+    mastermind.controller .down.> mastermind.models
+    mastermind.controller .down.> java.util
+
+    mastermind.models .down.> mastermind.utils
+    mastermind.utils .down.> java.io
+    mastermind.utils .down.> java.net
+    mastermind.views .down.> mastermind.utils
+    mastermind.distributed.dispatchers .down.> mastermind.utils
+    mastermind.views .down.> mastermind.controller
+
+    mastermind.distributed.dispatchers .down.> java.util
 @enduml
