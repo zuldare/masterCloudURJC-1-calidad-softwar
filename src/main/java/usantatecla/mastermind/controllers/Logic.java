@@ -1,11 +1,9 @@
 package usantatecla.mastermind.controllers;
 
-import java.util.HashMap;
-import java.util.Map;
 import usantatecla.mastermind.enums.StateValue;
-import usantatecla.mastermind.models.Game;
 import usantatecla.mastermind.models.Session;
-import usantatecla.mastermind.models.State;
+
+import java.util.Map;
 
 public class Logic  {
 

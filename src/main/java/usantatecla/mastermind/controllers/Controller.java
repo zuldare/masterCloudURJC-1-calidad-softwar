@@ -1,8 +1,7 @@
 package usantatecla.mastermind.controllers;
 
-import usantatecla.mastermind.models.Game;
+import usantatecla.mastermind.enums.StateValue;
 import usantatecla.mastermind.models.Session;
-import usantatecla.mastermind.models.State;
 
 public abstract class Controller {
 
@@ -10,6 +9,10 @@ public abstract class Controller {
 
   Controller(Session session){
     this.session = session;
+  }
+
+  public StateValue getValueState() {
+    return this.session.getValueState();
   }
 
 }

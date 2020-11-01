@@ -1,6 +1,8 @@
 package usantatecla.mastermind.controllers;
 
-import usantatecla.mastermind.models.*;
+import usantatecla.mastermind.models.ProposedCombination;
+import usantatecla.mastermind.models.Result;
+import usantatecla.mastermind.models.Session;
 
 public abstract class ProposalController extends AceptorController {
 

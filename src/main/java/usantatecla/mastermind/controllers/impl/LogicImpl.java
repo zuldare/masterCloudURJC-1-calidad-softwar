@@ -14,6 +14,7 @@ public class LogicImpl extends Logic {
 
     public LogicImpl(){
         this.session = new SessionImpl();
+        this.controllerDictionary = new HashMap<>();
         this.startControllerImpl = new StartControllerImpl(this.session);
         this.proposalControllerImpl = new ProposalControllerImpl(this.session);
         this.resumeControllerImpl = new ResumeControllerImpl (this.session);

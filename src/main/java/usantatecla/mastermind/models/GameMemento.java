@@ -3,7 +3,7 @@ package usantatecla.mastermind.models;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GameMemento {
+class GameMemento {
 
     private List<ProposedCombination> proposedCombinations;
     private List<Result> results;

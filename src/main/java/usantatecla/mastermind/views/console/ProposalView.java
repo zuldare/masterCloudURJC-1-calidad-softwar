@@ -1,7 +1,6 @@
 package usantatecla.mastermind.views.console;
 
 import usantatecla.mastermind.controllers.ProposalController;
-import usantatecla.mastermind.models.ProposedCombination;
 import usantatecla.utils.WithConsoleView;
 
 public class ProposalView extends WithConsoleView  {

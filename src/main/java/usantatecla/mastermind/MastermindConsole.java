@@ -1,6 +1,7 @@
 package usantatecla.mastermind;
 
 import usantatecla.mastermind.controllers.Logic;
+import usantatecla.mastermind.controllers.impl.LogicImpl;
 import usantatecla.mastermind.views.View;
 import usantatecla.mastermind.views.console.ViewConsole;
 

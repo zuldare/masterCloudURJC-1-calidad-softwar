@@ -6,14 +6,7 @@ import usantatecla.utils.YesNoDialog;
 public class ResumeView {
 
   void interact(ResumeController resumeController) {
-    boolean newGame = new YesNoDialog().read();
-
-    if (newGame) {
-      resumeController.resume();
-    } else {
-      resumeController.next();
-    }
+    resumeController.resume(new YesNoDialog().read(MessageView.RESUME.getMessage()));
   }
-
 
 }

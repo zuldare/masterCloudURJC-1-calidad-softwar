@@ -10,7 +10,6 @@ public class RedoCommand extends ConsoleCommand{
         super(REDO_COMMAND.getMessage(), proposalController);
     }
 
-
     @Override
     public void execute() {
         this.proposalController.redo();
