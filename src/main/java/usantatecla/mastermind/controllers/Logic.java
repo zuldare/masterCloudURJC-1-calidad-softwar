@@ -14,11 +14,11 @@ public class Logic  {
 
   public Logic(){
     this.session = new Session();
-    this.controllerDictionary = new HashMap<>();
+    this.controllerDictionary = new HashMap(createControllerDictionary());
   }
 
-  private Map<StateValue, Controller> createControllerDictionary() {
-    Map<StateValue, Controller> dictionary  = new HashMap<>();
+  private Map<StateValue, AceptorController> createControllerDictionary() {
+    Map<StateValue, AceptorController> dictionary  = new HashMap<>();
     dictionary.put(StateValue.CLOSE, new StartController(this.session));
     dictionary.put(StateValue.OPEN, new ProposalController(this.session));
     dictionary.put(StateValue.FINISHED, new ResumeController(this.session));
