@@ -39,15 +39,15 @@ Modelo/Vista/Presentador con presentador del modelo
 ![architecture](/docs/images/MasterMindArquitecture.png?raw=true)
 
 ## Paquete mastermind
-NOT FINISHED, THIS VERSION IS FROM COMPOSITE
+**NOT FINISHED, THIS VERSION IS FROM COMPOSITE**
 ![mastermind](/docs/images/PackageMasterMind.png?raw=true)
 
 ## Paquete mastermind.views 
-NOT FINISHED, THIS VERSION IS FROM COMPOSITE
+**NOT FINISHED, THIS VERSION IS FROM COMPOSITE**
 ![mastermind.views](/docs/images/PackageMasterMindViews.png?raw=true)
 
 ## Paquete mastermind.controllers
-NOT FINISHED, THIS VERSION IS FROM COMPOSITE
+**NOT FINISHED, THIS VERSION IS FROM COMPOSITE**
 ![mastermind.controllers](/docs/images/PackageMasterMindControllers.png?raw=true)
 
 ## Paquete mastermind.models
@@ -55,7 +55,7 @@ NOT FINISHED, THIS VERSION IS FROM COMPOSITE
 ![mastermind.models](/docs/images/PackageMasterMindModels.png?raw=true)
 
 ## Paquete mastermind.utils
-NOT FINISHED, THIS VERSION IS FROM COMPOSITE
+**NOT FINISHED, THIS VERSION IS FROM COMPOSITE**
 ![mastermind.utils](/docs/images/PackageMasterMindUtils.png?raw=true)
 
 # Calidad del Software
