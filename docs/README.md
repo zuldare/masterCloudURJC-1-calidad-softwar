@@ -24,7 +24,7 @@ Jaime Hernández Ortiz - jaime.hernandezortiz@gmail.com
     - Distribución: StandAlone
     - Persistencia: No
  
-    ![MasterMind](https://github.com/zuldare/masterCloudURJC-1-calidad-softwar/mvp.pm.withComposite/docs/images/300px-mastermind.jpg?raw=true)
+    ![MasterMind](/docs/images/300px-mastermind.jpg?raw=true)
  
 # Vista de Lógica/Diseño
 Modelo/Vista/Presentador con presentador del modelo
@@ -36,22 +36,22 @@ Modelo/Vista/Presentador con presentador del modelo
 * Patrón Memento, para la funcionalidad undo/redo
 
 ## Arquitectura
-![architecture](docs/images/MasterMindArquitecture.png?raw=true)
+![architecture](/docs/images/MasterMindArquitecture.png?raw=true)
 
 ## Paquete mastermind
-![mastermind](docs/images/PackageMasterMind.png?raw=true)
+![mastermind](/docs/images/PackageMasterMind.png?raw=true)
 
 ## Paquete mastermind.views
-![mastermind.views](docs/images/PackageMasterMindViews.png?raw=true)
+![mastermind.views](/docs/images/PackageMasterMindViews.png?raw=true)
 
 ## Paquete mastermind.controllers
-![mastermind.controllers](docs/images/PackageMasterMindControllers.png?raw=true)
+![mastermind.controllers](/docs/images/PackageMasterMindControllers.png?raw=true)
 
 ## Paquete mastermind.models
 ![mastermind.models](/docs/images/PackageMasterMindModels.png?raw=true)
 
 ## Paquete mastermind.utils
-![mastermind.utils](docs/images/PackageMasterMindUtils.png?raw=true)
+![mastermind.utils](/docs/images/PackageMasterMindUtils.png?raw=true)
 
 # Calidad del Software
 
@@ -60,10 +60,10 @@ Modelo/Vista/Presentador con presentador del modelo
 - **Principio de Sustitución de Liskov**: las vistas preguntan por el tipo de controlador polimórfico
   
 # Vista de Desarrollo/Implementación
-![development](docs/images/MasterMindDevelopment.png)
+![development](/docs/images/MasterMindDevelopment.png)
  
 # Vista de Despliegue/Física
-![deployment](docs/images/MasterMindDeployment.png?raw=true)
+![deployment](/docs/images/MasterMindDeployment.png?raw=true)
 
 ## Vista de Procesos
 
