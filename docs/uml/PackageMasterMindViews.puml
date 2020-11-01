@@ -1,0 +1,224 @@
+@startuml
+
+package mastermind.controllers {
+    interface ControllerVisitor
+    interface AcceptorController
+    abstract class Controller
+    class StartController
+    class ProposalController
+    class ActionController
+    class RedoController
+    class UndoController
+    class ResumeController
+}
+
+package mastermind.views {
+
+    abstract class AbstractView{
+        + {abstract} void interact(Controller controller)
+    }
+
+    class MessageView{
+        + {static} TURN: Message
+        + {static} SECRET: Message
+        + {static} RESUME: Message
+        + {static} RESULT: Message
+        + {static} PROPOSED_COMBINATION: Message
+        + {static} TITLE: Message
+        + {static} WINNER: Message
+        + {static} LOOSER: Message
+        + {static} PROPOSAL_COMMAND: Message
+        + {static} UNDO_COMMAND: Message
+        + {static} REDO_COMMAND: Message
+        - message: String
+        - Message(String)
+        + {static} valueOf(String): Message
+        ~ getMessage(): String
+    }
+}
+
+package mastermind.views.console {
+
+    class View {
+        - final StartView startView;
+        - final ProposalView proposalView;
+        - final ResumeView resumeView;
+        + View()
+        + interact(Controller controller): void
+        + visit(StartController startController): void
+        + visit(ProposalController proposalController): void
+        + visit(ResumeController resumeController): void
+    }
+
+    class ColorView{
+        - {static} final char[] INITIALS
+        - final Color color
+        ~ ColorView(Color color)
+        ~ {static} allInitials(): String
+        + {static} getInstance(char character): Color
+        + write(): void
+    }
+
+    class ErrorView{
+        - {static} final String[] MESSAGES
+        - final Error error;
+        ~ ErrorView(Error error)
+        + writeln(): void
+    }
+
+     class ProposalView{
+        - final SecretCombinationView secretCombinationView
+        ~ ProposalView()
+        ~ interact(ProposalController proposalController): void
+    }
+
+    class ProposedCombinationView{
+        ~ ProposedCombinationView()
+        ~ write(int[]): void
+        ~ read(): int[]
+    }
+
+    class ResultView{
+        - final Result result;
+        ~ ResultView()
+        ~ writeln(int[]): void
+    }
+
+    class ResumeView{
+        ~ ResumeView()
+        ~ interact(ResumeController resumeController): boolean
+    }
+
+    class SecretCombinationView{
+        ~ SecretCombinationView()
+        ~ writeln(int): void
+    }
+
+    class StartView{
+        ~ StartView()
+        ~ interact(StartController startController): void
+    }
+
+    class ConsoleCommand{
+        # String name
+        # ProposalController proposalController
+        + ConsoleCommand(String name, ProposalController proposalController)
+        + getName(): String
+    }
+
+    class ConsoleMenu{
+        - {static} final String TITLE_OPTION
+        - final List<Command> commands
+        + ConsoleMenu()
+        + execute(): void
+        # addCommand(Command command): void
+    }
+
+    class ProposalCommand{
+        + ProposalCommand(ProposalController proposalController)
+        + execute(): void
+        + isActive(): boolean
+    }
+
+    class RedoCommand{
+        + RedoCommand(ProposalController proposalController)
+        + execute(): void
+        + isActive(): boolean
+    }
+
+    class UndoCommand{
+        + UndoCommand(ProposalController proposalController)
+        + execute(): void
+        + isActive(): boolean
+    }
+
+    class ProposalMenu{
+        ~ ProposalMenu(ProposalController proposalController) {
+    }
+
+}
+
+package mastermind.models {
+    class ProposedCombination
+    class Result
+    class Color
+}
+
+package mastermind.utils {
+    class WithConsoleView
+    class YesNoDialog
+    class Error
+    class Command
+    class ClosedInterval
+}
+
+View *--> StartView
+View *--> ProposalView
+View *--> ResumeView
+
+AbstractView o----> AcceptorController
+AcceptorController <|--- StartController
+AcceptorController <|--- ProposalController
+AcceptorController <|--- ResumeController
+
+Controller <|--- StartController
+Controller <|--- ProposalController
+Controller <|--- ActionController
+Controller <|--- UndoController
+Controller <|--- RedoController
+Controller <|--- ResumeController
+
+StartController *---> ControllerVisitor
+ProposalController *---> ControllerVisitor
+ResumeController *---> ControllerVisitor
+
+Command <|---- ConsoleCommand
+ConsoleCommand <|---- ProposalCommand
+ConsoleCommand <|---- UndoCommand
+ConsoleCommand <|---- RedoCommand
+ConsoleCommand *----> ProposalController
+ProposalCommand *----> ProposedCombinationView
+UndoCommand *----> ProposalController
+RedoCommand *----> ProposalController
+
+ConsoleMenu <|--- ProposalMenu
+ConsoleMenu ...> Command
+ConsoleMenu ...> ClosedInterval
+ProposalMenu *---> ProposalCommand
+ProposalMenu *---> UndoCommand
+ProposalMenu *---> RedoCommand
+
+AbstractView <|---- View
+ControllerVisitor <|---- View
+
+WithConsoleView <|---- ColorView
+WithConsoleView <|---- ProposalView 
+
+StartView *-----> StartController
+ProposalView *-----> ProposalController
+ResumeView *-----> ResumeController
+
+StartView ....> MessageView
+StartView ....> SecretCombinationView
+ProposalView .....> MessageView
+ProposalView .....> SecretCombinationView
+ProposalView .....> ProposedCombinationView
+ProposalView .....> ResultView
+ProposalView *----> ProposalMenu
+
+ResumeView ....> YesNoDialog
+
+ProposedCombinationView *----> ProposedCombination
+ProposedCombinationView *----> Color
+ProposedCombinationView *----> Error
+ProposedCombinationView ....> ColorView
+ProposedCombinationView ....> ErrorView
+
+SecretCombinationView ....> MessageView
+
+ResultView ...> MessageView
+ResultView *---> Result
+
+ErrorView ....> ColorView
+
+@enduml

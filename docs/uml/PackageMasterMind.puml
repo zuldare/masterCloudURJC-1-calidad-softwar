@@ -1,0 +1,25 @@
+@startuml
+
+    class mastermind.Mastermind{
+        - Logic logic
+        - View View
+        # Mastermind()
+        # void play()
+        # abstract View createView()
+    }
+
+    class mastermind.ConsoleMastermind extends mastermind.Mastermind{
+        # View createView()
+        + {static} void main(String[] args)
+    }
+
+    class mastermind.GraphicsMastermind extends mastermind.Mastermind{
+        # View createView()
+        + {static} void main(String[] args)
+    }
+
+    mastermind.Mastermind *---> mastermind.views.View
+    mastermind.Mastermind *--> mastermind.controller.Logic
+    mastermind.controller.Logic *--> mastermind.models.Game
+
+@enduml
