@@ -36,22 +36,22 @@ Modelo/Vista/Presentador con presentador del modelo
 * Patrón Memento, para la funcionalidad undo/redo
 
 ## Arquitectura
-![architecture](https://github.com/zuldare/masterCloudURJC-1-calidad-softwarblob/mvp.pm.withComposite/docs/images/MasterMindArquitecture.png?raw=true)
+![architecture](docs/images/MasterMindArquitecture.png?raw=true)
 
 ## Paquete mastermind
-![mastermind](https://github.com/zuldare/masterCloudURJC-1-calidad-softwarblob/mvp.pm.withComposite/docs/images/PackageMasterMind.png?raw=true)
+![mastermind](docs/images/PackageMasterMind.png?raw=true)
 
 ## Paquete mastermind.views
-![mastermind.views](https://github.com/zuldare/masterCloudURJC-1-calidad-softwarblob/mvp.pm.withComposite/docs/images/PackageMasterMindViews.png?raw=true)
+![mastermind.views](docs/images/PackageMasterMindViews.png?raw=true)
 
 ## Paquete mastermind.controllers
-![mastermind.controllers](https://github.com/zuldare/masterCloudURJC-1-calidad-softwarblob/mvp.pm.withComposite/docs/images/PackageMasterMindControllers.png?raw=true)
+![mastermind.controllers](docs/images/PackageMasterMindControllers.png?raw=true)
 
 ## Paquete mastermind.models
-![mastermind.models](https://github.com/zuldare/masterCloudURJC-1-calidad-softwarblob/mvp.pm.withComposite/docs/images/PackageMasterMindModels.png?raw=true)
+![mastermind.models](/docs/images/PackageMasterMindModels.png?raw=true)
 
 ## Paquete mastermind.utils
-![mastermind.utils](https://github.com/zuldare/masterCloudURJC-1-calidad-softwarblob/mvp.pm.withComposite/docs/images/PackageMasterMindUtils.png?raw=true)
+![mastermind.utils](docs/images/PackageMasterMindUtils.png?raw=true)
 
 # Calidad del Software
 
@@ -60,10 +60,10 @@ Modelo/Vista/Presentador con presentador del modelo
 - **Principio de Sustitución de Liskov**: las vistas preguntan por el tipo de controlador polimórfico
   
 # Vista de Desarrollo/Implementación
-![development](https://github.com/zuldare/masterCloudURJC-1-calidad-softwarblob/mvp.pm.withComposite/docs/images/MasterMindDevelopment.png?raw=true)
-
+![development](docs/images/MasterMindDevelopment.png)
+ 
 # Vista de Despliegue/Física
-![deployment](https://github.com/zuldare/masterCloudURJC-1-calidad-softwarblob/mvp.pm.withComposite/docs/images/MasterMindDeployment.png?raw=true)
+![deployment](docs/images/MasterMindDeployment.png?raw=true)
 
 ## Vista de Procesos
 
