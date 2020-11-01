@@ -1,4 +1,4 @@
-# MasterMind - Solución mvp.pm.withComposite
+# MasterMind - Solución mvp.pm.ClienteServidor
 
 Jaime Hernández Ortiz - jaime.hernandezortiz@gmail.com
 
