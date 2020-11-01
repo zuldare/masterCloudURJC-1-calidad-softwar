@@ -3,34 +3,42 @@ package usantatecla.mastermind.controllers;
 import usantatecla.mastermind.models.ProposedCombination;
 import usantatecla.mastermind.models.Result;
 import usantatecla.mastermind.models.Session;
+import usantatecla.mastermind.models.SessionImpl;
 
 public class ActionController extends Controller {
 
-    ActionController(Session session) {
+    private SessionImpl session;
+
+    public ActionController(Session session) {
         super(session);
+        this.session = (SessionImpl) session;
     }
 
     public void addProposedCombination(ProposedCombination proposedCombination){
-        this.session.addProposedCombination(proposedCombination);
+        session.addProposedCombination(proposedCombination);
     }
 
     public boolean isLooser(){
-        return this.session.isLooser();
+        return session.isLooser();
     }
 
     public boolean isWinner(){
-        return this.session.isWinner();
+        return session.isWinner();
     }
 
-    int getAttempts(){
-        return this.session.getAttempts();
+    public int getAttempts(){
+        return session.getAttempts();
     }
 
-    ProposedCombination getProposedCombinationAt(int position){
-        return this.session.getProposedCombinationAt(position);
+    public ProposedCombination getProposedCombinationAt(int position){
+        return session.getProposedCombinationAt(position);
     }
 
-    Result getResultAt(int position){
-        return this.session.getResultAt(position);
+    public Result getResultAt(int position){
+        return session.getResultAt(position);
+    }
+
+    public void next() {
+        this.session.next();
     }
 }

@@ -2,62 +2,36 @@ package usantatecla.mastermind.controllers;
 
 import usantatecla.mastermind.models.*;
 
-public class ProposalController extends Controller implements AceptorController {
-
-  private ActionController actionController;
-  private UndoController undoController;
-  private RedoController redoController;
+public abstract class ProposalController extends AceptorController {
 
   public ProposalController(Session session) {
     super(session);
-    this.actionController = new ActionController(this.session);
-    this.undoController = new UndoController(this.session);
-    this.redoController = new RedoController(this.session);
   }
 
-  @Override
+  public abstract void addProposedCombination(ProposedCombination proposedCombination);
+
+  public abstract boolean isLooser();
+
+  public abstract boolean isWinner();
+
+  public abstract int getAttempts();
+
+  public abstract ProposedCombination getProposedCombination(int position);
+
+  public abstract Result getResult(int position);
+
+  public abstract void undo();
+
+  public abstract boolean isUndoable();
+
+  public abstract void redo();
+
+  public abstract boolean isRedoable();
+
+  public abstract void next();
+
   public void accept(VisitorController visitorController) {
     visitorController.visit(this);
-  }
-
-  public void addProposedCombination(ProposedCombination proposedCombination) {
-    this.actionController.addProposedCombination(proposedCombination);
-  }
-
-  public int getAttempts() {
-    return this.actionController.getAttempts();
-  }
-
-  public ProposedCombination getProposedCombination(int position) {
-    return this.actionController.getProposedCombinationAt(position);
-  }
-
-  public Result getResult(int position) {
-    return this.actionController.getResultAt(position);
-  }
-
-  public boolean isWinner() {
-    return this.actionController.isWinner();
-  }
-
-  public boolean isLooser() {
-    return this.actionController.isLooser();
-  }
-
-  public void redo(){
-    this.redoController.redo();
-  }
-
-  public boolean isRedoable(){
-    return this.redoController.isRedoable();
-  }
-
-  public void undo(){
-    this.undoController.undo();
-  }
-
-  public boolean isUndoable(){
-    return this.undoController.isUndoable();
   }
 
 }

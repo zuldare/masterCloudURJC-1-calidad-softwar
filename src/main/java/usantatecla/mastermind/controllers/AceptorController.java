@@ -1,6 +1,12 @@
 package usantatecla.mastermind.controllers;
 
-public interface AceptorController {
+import usantatecla.mastermind.models.Session;
 
-     void accept(VisitorController visitorController);
+public abstract class AceptorController extends Controller{
+
+     AceptorController(Session session){
+          super(session);
+     }
+
+     public abstract void accept(VisitorController visitorController);
 }

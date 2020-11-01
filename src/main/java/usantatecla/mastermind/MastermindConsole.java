@@ -1,13 +1,17 @@
 package usantatecla.mastermind;
 
+import usantatecla.mastermind.controllers.Logic;
 import usantatecla.mastermind.views.View;
 import usantatecla.mastermind.views.console.ViewConsole;
 
 public class MastermindConsole extends Mastermind {
 
-  @Override
   protected View createView() {
     return new ViewConsole();
+  }
+
+  protected Logic createLogic() {
+    return new LogicImpl();
   }
 
   public static void main(String[] args){
