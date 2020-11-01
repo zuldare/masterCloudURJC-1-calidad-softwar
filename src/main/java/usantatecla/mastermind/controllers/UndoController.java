@@ -2,7 +2,7 @@ package usantatecla.mastermind.controllers;
 
 import usantatecla.mastermind.models.Session;
 
-public class UndoController extends UseCaseController {
+public class UndoController extends Controller {
 
     UndoController(Session session) {
         super(session);
@@ -12,7 +12,7 @@ public class UndoController extends UseCaseController {
         this.session.undo();
     }
 
-    boolean undoable(){
+    boolean isUndoable(){
         return this.session.isUndoable();
     }
 }

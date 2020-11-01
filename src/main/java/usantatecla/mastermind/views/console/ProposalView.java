@@ -13,10 +13,8 @@ public class ProposalView extends WithConsoleView  {
   }
 
   boolean interact(ProposalController proposalController){
-    ProposedCombination proposedCombination = new ProposedCombination();
-    ProposedCombinationView proposedCombinationView = new ProposedCombinationView(proposedCombination);
-    proposedCombinationView.read();
-    proposalController.addProposedCombination(proposedCombination);
+    new ProposalMenu(proposalController).execute();
+
     this.console.writeln();
     MessageView.ATTEMPTS.writeln(proposalController.getAttempts());
     this.secretCombinationView.writeln();

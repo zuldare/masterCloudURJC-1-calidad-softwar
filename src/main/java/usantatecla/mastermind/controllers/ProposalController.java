@@ -44,4 +44,20 @@ public class ProposalController extends Controller implements AceptorController 
     return this.actionController.isLooser();
   }
 
+  public void redo(){
+    this.redoController.redo();
+  }
+
+  public boolean isRedoable(){
+    return this.redoController.isRedoable();
+  }
+
+  public void undo(){
+    this.undoController.undo();
+  }
+
+  public boolean isUndoable(){
+    return this.undoController.isUndoable();
+  }
+
 }

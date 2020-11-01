@@ -10,15 +10,18 @@ enum MessageView {
 	PROPOSED_COMBINATION("Propose a combination: "),
 	TITLE("----- MASTERMIND -----"),
 	WINNER("You've won!!! ;-)"),
-	LOOSER("You've lost!!! :-(");
+	LOOSER("You've lost!!! :-("),
+	PROPOSE_COMMAND("Propose: "),
+	REDO_COMMAND("Redo previous proposal"),
+	UNDO_COMMAND("Undo previos proposal");
 
 	private String message;
 	
 	private Console console;
 	
-	private MessageView(String message) {
+	MessageView(String message) {
 			if (this.console == null) {
-				this.console = new Console();
+				this.console = Console.instance();
 			}
 		this.message = message;
 	}
@@ -39,4 +42,7 @@ enum MessageView {
 		this.console.writeln(this.message.replaceFirst("#blacks", "" + blacks).replaceFirst("#whites", "" + whites));
 	}
 
+	public String getMessage() {
+		return this.message;
+	}
 }

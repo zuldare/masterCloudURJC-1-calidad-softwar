@@ -5,8 +5,21 @@ import java.io.InputStreamReader;
 
 public class Console {
 
-	private BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-	
+	public static Console console;
+
+	private Console() {
+
+	}
+
+	public static Console instance() {
+		if (Console.console == null) {
+			Console.console = new Console();
+		}
+		return Console.console;
+	}
+
+	private final BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+
 	public String readString(String title) {
 		String input = null;
 		boolean ok = false;
