@@ -36,27 +36,27 @@ Modelo/Vista/Presentador con presentador del modelo
 * Patrón Memento, para la funcionalidad undo/redo
 
 ## Arquitectura
-![architecture](https://github.com/zuldare/masterCloudURJC-1-calidad-softwarblob/mvp.pm.ClienteServidor/docs/images/MasterMindArquitecture.png?raw=true)
+![architecture](/docs/images/MasterMindArquitecture.png?raw=true)
 
 ## Paquete mastermind
 NOT FINISHED, THIS VERSION IS FROM COMPOSITE
-![mastermind](https://github.com/zuldare/masterCloudURJC-1-calidad-softwarblob/mvp.pm.ClienteServidor/docs/images/PackageMasterMind.png?raw=true)
+![mastermind](/docs/images/PackageMasterMind.png?raw=true)
 
 ## Paquete mastermind.views 
 NOT FINISHED, THIS VERSION IS FROM COMPOSITE
-![mastermind.views](https://github.com/zuldare/masterCloudURJC-1-calidad-softwarblob/mvp.pm.ClienteServidor/docs/images/PackageMasterMindViews.png?raw=true)
+![mastermind.views](/docs/images/PackageMasterMindViews.png?raw=true)
 
 ## Paquete mastermind.controllers
 NOT FINISHED, THIS VERSION IS FROM COMPOSITE
-![mastermind.controllers](https://github.com/zuldare/masterCloudURJC-1-calidad-softwarblob/mvp.pm.ClienteServidor/docs/images/PackageMasterMindControllers.png?raw=true)
+![mastermind.controllers](/docs/images/PackageMasterMindControllers.png?raw=true)
 
 ## Paquete mastermind.models
 NOT FINISHED, THIS VERSION IS FROM COMPOSITE
-![mastermind.models](https://github.com/zuldare/masterCloudURJC-1-calidad-softwarblob/mvp.pm.ClienteServidor/docs/images/PackageMasterMindModels.png?raw=true)
+![mastermind.models](/docs/images/PackageMasterMindModels.png?raw=true)
 
 ## Paquete mastermind.utils
 NOT FINISHED, THIS VERSION IS FROM COMPOSITE
-![mastermind.utils](https://github.com/zuldare/masterCloudURJC-1-calidad-softwarblob/mvp.pm.ClienteServidor/docs/images/PackageMasterMindUtils.png?raw=true)
+![mastermind.utils](/docs/images/PackageMasterMindUtils.png?raw=true)
 
 # Calidad del Software
 
@@ -65,11 +65,12 @@ NOT FINISHED, THIS VERSION IS FROM COMPOSITE
 - **Principio de Sustitución de Liskov**: las vistas preguntan por el tipo de controlador polimórfico
   
 # Vista de Desarrollo/Implementación
-![development](https://github.com/zuldare/masterCloudURJC-1-calidad-softwarblob/mvp.pm.ClienteServidor/docs/images/MasterMindDevelopment.png?raw=true)
-![development](https://github.com/zuldare/masterCloudURJC-1-calidad-softwarblob/mvp.pm.ClienteServidor/docs/images/MasterMindDevelopmentClient.png?raw=true)
-![development](https://github.com/zuldare/masterCloudURJC-1-calidad-softwarblob/mvp.pm.ClienteServidor/docs/images/MasterMindDevelopmentServer.png?raw=true)
+![development](/docs/images/MasterMindDevelopment.png?raw=true)
+![development](/docs/images/MasterMindDevelopmentClient.png?raw=true)
+![development](/docs/images/MasterMindDevelopmentServer.png?raw=true)
+
 # Vista de Despliegue/Física
-![deployment](https://github.com/zuldare/masterCloudURJC-1-calidad-softwarblob/mvp.pm.ClienteServidor/docs/images/MasterMindDeployment.png?raw=true)
+![deployment](/docs/images/MasterMindDeployment.png?raw=true)
 
 ## Vista de Procesos
 
