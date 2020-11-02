@@ -1,36 +1,62 @@
 package usantatecla.mastermind.controllers;
 
-import usantatecla.mastermind.models.ProposedCombination;
-import usantatecla.mastermind.models.Result;
-import usantatecla.mastermind.models.Session;
+import usantatecla.mastermind.models.Error;
+import usantatecla.mastermind.models.*;
+import usantatecla.mastermind.views.console.ColorView;
+import usantatecla.mastermind.views.console.ErrorView;
+import usantatecla.mastermind.views.console.ProposalView;
 
-public class ActionController extends Controller {
+public class ActionController extends InGameController {
 
     ActionController(Session session) {
         super(session);
     }
 
-    public void addProposedCombination(ProposedCombination proposedCombination){
+    @Override
+    protected void inGameControl() {
+        ProposedCombination proposedCombination = this.readProposedCombination();
         this.session.addProposedCombination(proposedCombination);
     }
 
-    public boolean isLooser(){
-        return this.session.isLooser();
+    @Override
+    public boolean isActive() {
+        return true;
     }
 
-    public boolean isWinner(){
-        return this.session.isWinner();
-    }
+    private ProposedCombination readProposedCombination() {
 
-    int getAttempts(){
-        return this.session.getAttempts();
-    }
+        ProposedCombination proposedCombination = new ProposedCombination();
+        Error error;
 
-    ProposedCombination getProposedCombinationAt(int position){
-        return this.session.getProposedCombinationAt(position);
-    }
+        do {
 
-    Result getResultAt(int position){
-        return this.session.getResultAt(position);
+            error = null;
+            String characters = new ProposalView().readProposedCombination();
+
+            if (characters.length() > Combination.getWidth()) {
+                error = Error.WRONG_LENGTH;
+            } else {
+                for (int i = 0; i < characters.length(); i++) {
+                    Color color = ColorView.getInstance(characters.charAt(i));
+                    if (color == null) {
+                        error = Error.WRONG_CHARACTERS;
+                    } else {
+                        if (proposedCombination.getColors().contains(color)) {
+                            error = Error.DUPLICATED;
+                        } else {
+                            proposedCombination.getColors().add(color);
+                        }
+                    }
+                }
+            }
+
+            if (error != null) {
+                new ErrorView(error).writeln();
+                proposedCombination.getColors().clear();
+            }
+
+        } while (error != null);
+
+        return proposedCombination;
     }
 }

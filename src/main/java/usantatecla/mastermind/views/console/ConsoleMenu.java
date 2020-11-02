@@ -7,7 +7,7 @@ import usantatecla.utils.Console;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class ConsoleMenu {
+public class ConsoleMenu {
     private static final String TITLE_OPTION = "----- Choose one option -----";
     private List<Command> commands;
 
@@ -40,7 +40,7 @@ public abstract class ConsoleMenu {
         activeCommands.get(option).execute();
     }
 
-    protected void addCommand(Command command) {
+    public void addCommand(Command command) {
         this.commands.add(command);
     }
 }

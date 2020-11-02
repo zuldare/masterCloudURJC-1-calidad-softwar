@@ -1,22 +1,25 @@
 package usantatecla.mastermind.views.console;
 
-import usantatecla.mastermind.controllers.ProposalController;
+import usantatecla.mastermind.controllers.InGameController;
 
 import static usantatecla.mastermind.views.console.MessageView.UNDO_COMMAND;
 
 public class UndoCommand extends ConsoleCommand {
 
-    UndoCommand(ProposalController proposalController){
-        super(UNDO_COMMAND.getMessage(), proposalController);
+    private  InGameController inGameController;
+
+    public UndoCommand(InGameController inGameController) {
+        super(UNDO_COMMAND.getMessage());
+        this.inGameController = inGameController;
     }
 
     @Override
     public void execute() {
-        this.proposalController.undo();
+        this.inGameController.doAction();
     }
 
     @Override
     public boolean isActive() {
-        return this.proposalController.isUndoable();
+        return this.inGameController.isActive();
     }
 }

@@ -5,11 +5,11 @@ import usantatecla.utils.WithConsoleView;
 
 public class SecretCombinationView extends WithConsoleView {
 
-	SecretCombinationView() {
+	public SecretCombinationView() {
 		super();
 	}
 
-	void writeln() {
+	public void writeln() {
 		for (int i = 0; i < SecretCombination.getWidth(); i++) {
 			MessageView.SECRET.write();
 		}

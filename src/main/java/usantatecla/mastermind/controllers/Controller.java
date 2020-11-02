@@ -1,8 +1,6 @@
 package usantatecla.mastermind.controllers;
 
-import usantatecla.mastermind.models.Game;
 import usantatecla.mastermind.models.Session;
-import usantatecla.mastermind.models.State;
 
 public abstract class Controller {
 
@@ -12,7 +10,5 @@ public abstract class Controller {
     this.session = session;
   }
 
-  public void next(){
-    this.session.next();
-  }
+  public abstract void doAction();
 }

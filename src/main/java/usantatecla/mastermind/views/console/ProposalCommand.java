@@ -1,25 +1,24 @@
 package usantatecla.mastermind.views.console;
 
-import usantatecla.mastermind.controllers.ProposalController;
-import usantatecla.mastermind.models.ProposedCombination;
+import usantatecla.mastermind.controllers.InGameController;
 
 import static usantatecla.mastermind.views.console.MessageView.PROPOSE_COMMAND;
 
 public class ProposalCommand extends ConsoleCommand{
 
-    public ProposalCommand(ProposalController proposalController){
-        super(PROPOSE_COMMAND.getMessage(), proposalController);
+    private InGameController inGameController;
+    public ProposalCommand(InGameController inGameController){
+        super(PROPOSE_COMMAND.getMessage());
+        this.inGameController = inGameController;
     }
+
     @Override
     public void execute() {
-        ProposedCombination proposedCombination = new ProposedCombination();
-        ProposedCombinationView proposedCombinationView = new ProposedCombinationView(proposedCombination);
-        proposedCombinationView.read();
-        this.proposalController.addProposedCombination(proposedCombination);
+        inGameController.doAction();
     }
 
     @Override
     public boolean isActive() {
-        return true;
+        return inGameController.isActive();
     }
 }
