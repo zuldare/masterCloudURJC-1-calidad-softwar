@@ -36,22 +36,18 @@ Modelo/Vista/Presentador con presentador del modelo
 * Patrón Memento, para la funcionalidad undo/redo
 
 ## Arquitectura
-![architecture](/docs/images/MasterMindArquitecture.png?raw=true)
+[//]: ![architecture](/docs/images/MasterMindArquitecture.png?raw=true)
 
 ## Paquete mastermind
 ![mastermind](/docs/images/PackageMasterMind.png?raw=true)
 
-## Paquete mastermind.views
-![mastermind.views](/docs/images/PackageMasterMindViews.png?raw=true)
+## Paquete mastermind.views 
 
-## Paquete mastermind.controllers
-![mastermind.controllers](/docs/images/PackageMasterMindControllers.png?raw=true)
+## Paquete mastermind.controllers 
 
-## Paquete mastermind.models
-![mastermind.models](/docs/images/PackageMasterMindModels.png?raw=true)
+## Paquete mastermind.models 
 
-## Paquete mastermind.utils
-![mastermind.utils](/docs/images/PackageMasterMindUtils.png?raw=true)
+## Paquete mastermind.utils 
 
 # Calidad del Software
 
