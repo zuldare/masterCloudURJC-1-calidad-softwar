@@ -36,10 +36,9 @@ Modelo/Vista/Presentador con presentador del modelo
 * Patrón Memento, para la funcionalidad undo/redo
 
 ## Arquitectura
-[//]: ![architecture](/docs/images/MasterMindArquitecture.png?raw=true)
+![architecture](/docs/images/MasterMindArquitecture.png?raw=true)
 
-## Paquete mastermind
-![mastermind](/docs/images/PackageMasterMind.png?raw=true)
+## Paquete mastermind 
 
 ## Paquete mastermind.views 
 
